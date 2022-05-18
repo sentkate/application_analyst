@@ -1,0 +1,19 @@
+image: cr.yandex/crp742p3qacifd2hcon2/practice-da:latest
+
+stages: 
+    - init
+    - run
+
+job_1:
+    stage: run
+    only: 
+        - schedules
+    script: 
+        - python alert_lenta.py 
+
+job_2: 
+    stage: run
+    only: 
+        - schedules
+    script: 
+        - python alert_msg.py
